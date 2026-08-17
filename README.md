@@ -9,7 +9,6 @@ O EventPulse é um microsserviço/SaaS projetado para resolver o problema de ent
 * **Core API (Regras de Negócio):** Java 17+ e Spring Boot
 * **Workers (Processamento Assíncrono):** Node.js e AWS Lambda
 * **Banco de Dados Relacional:** PostgreSQL (Tenants, Configurações, Chaves de API)
-* **Banco de Dados NoSQL:** AWS DynamoDB (Logs de Auditoria de alta performance)
 * **Mensageria e Filas:** AWS SQS & Dead Letter Queues (DLQ)
 * **Autenticação & Gateway:** AWS Cognito (JWT) e AWS API Gateway
 * **Dashboard do Cliente:** Vite + React
