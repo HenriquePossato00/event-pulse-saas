@@ -1,6 +1,8 @@
 spring:
   application:
     name: eventpulse-core-api
+  main:
+    allow-bean-definition-overriding: true
 
   # Configuração de conexão com o Banco de Dados
   datasource:
