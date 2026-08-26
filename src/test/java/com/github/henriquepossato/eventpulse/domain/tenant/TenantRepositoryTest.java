@@ -7,12 +7,16 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
 @DataJpaTest
 public class TenantRepositoryTest {
 
     @Autowired
     private TenantRepository tenantRepository;
+
+    @Autowired
+    private TestEntityManager entityManager;
 
     @Test
     void sholdSaveAndFindTenantSuccessfully() {
@@ -25,6 +29,9 @@ public class TenantRepositoryTest {
 
         // Act: salvar e buscar o cliente no DB
         Tenant sevedTenant = tenantRepository.save(newTenant);
+        // Força a inserção real no banco e limpa a memória do Hibernate
+        entityManager.flush();
+        entityManager.clear();
         Optional<Tenant> foundTenant = tenantRepository.findById(sevedTenant.getId());
 
         // Assert: verificar se o dados estão corretos
