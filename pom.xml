@@ -64,6 +64,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        
+        <!-- banco leve que vive apenas na memória -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
 		<!-- Springdoc  Open API -->
         <dependency>
       		<groupId>org.springdoc</groupId>
