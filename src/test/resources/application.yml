@@ -1,0 +1,8 @@
+spring:
+  flyway:
+    enabled: false  # desativa o flyway para o ambiente de testes 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+
