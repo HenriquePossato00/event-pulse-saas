@@ -1,4 +1,4 @@
-package com.github.henriquepossato.eventpulse.dto;
+package com.github.henriquepossato.eventpulse.domain.webhook.web;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.List;
 
