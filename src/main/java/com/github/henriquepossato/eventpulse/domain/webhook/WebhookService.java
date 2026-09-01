@@ -41,4 +41,12 @@ public class WebhookService {
         // savar no banco de dados 
         return webhookRepository.save(newWebhook);
     }
+
+    @Transactional(readOnly = true)
+    public List<WebhookEndpoint> listWebhooksByTenant(UUID tenantId) {
+        tenantRepository.findById(tenantId)
+                .orElseThrow(() -> new IllegalArgumentException("Cliente não encontrado, id: " + tenantId));
+
+        return webhookRepository.findByTenantId(tenantId);
+    }
 }
